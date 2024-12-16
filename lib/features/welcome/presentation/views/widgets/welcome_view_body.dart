@@ -14,8 +14,7 @@ class WelcomeViewBody extends StatelessWidget {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    return
-       SizedBox(
+    return SizedBox(
         height: screenHeight,
         width: screenWidth,
         child: Column(
