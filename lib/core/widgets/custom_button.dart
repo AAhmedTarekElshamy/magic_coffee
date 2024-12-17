@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, this.onPressed});
- final void Function()? onPressed;
+  final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: ElevatedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          shape: const CircleBorder(),
-          backgroundColor: const Color(0xFF2F4F5F), // Circular shape
-          padding: const EdgeInsets.all(20), // Background color (close to the color in the image)
-          elevation: 5, // Shadow elevation
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<CircleBorder>(
+            const CircleBorder(),
+          ),
+          backgroundColor: MaterialStateProperty.all<Color>(
+            const Color(0xff324A59),
+          ), // Background color
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+            const EdgeInsets.all(20), // Padding inside the button
+          ),
+          elevation: MaterialStateProperty.all<double>(5), // Shadow elevation
         ),
         child: const Icon(
           Icons.arrow_forward, // Arrow icon
@@ -21,6 +29,5 @@ class CustomButton extends StatelessWidget {
         ),
       ),
     );
-
   }
 }
