@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'features/auth/presentation/views/signin_view.dart';
 import 'features/welcome/presentation/views/welcome_view.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomeView(),
+      home: const SignInView(),
     );
   }
 }
